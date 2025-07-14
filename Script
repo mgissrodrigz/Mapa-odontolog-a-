@@ -1,0 +1,10 @@
+const materias = [ { codigo: "BI-121", nombre: "Biología General", semestre: "Primer Año - Primer Semestre", requisito: [] }, { codigo: "QQ-103", nombre: "Química General", semestre: "Primer Año - Primer Semestre", requisito: [] }, { codigo: "SC-101", nombre: "Sociología", semestre: "Primer Año - Primer Semestre", requisito: [] }, { codigo: "IF-105", nombre: "Informática", semestre: "Primer Año - Primer Semestre", requisito: [] }, { codigo: "MM-121", nombre: "Matemática", semestre: "Primer Año - Primer Semestre", requisito: [] }, { codigo: "EG-011", nombre: "Español", semestre: "Primer Año - Primer Semestre", requisito: [] }, { codigo: "QQ-214", nombre: "Química Orgánica", semestre: "Primer Año - Segundo Semestre", requisito: ["QQ-103", "BI-121"] }, { codigo: "FF-101", nombre: "Bioestadística", semestre: "Primer Año - Segundo Semestre", requisito: [] }, { codigo: "FI-101", nombre: "Filosofía", semestre: "Primer Año - Segundo Semestre", requisito: [] }, { codigo: "HH-101", nombre: "Historia de Honduras", semestre: "Primer Año - Segundo Semestre", requisito: [] }, // Agrega el resto de materias aquí con el mismo formato... ];
+
+const contenedor = document.getElementById("malla"); const detalleTexto = document.getElementById("detalle-texto"); const buscador = document.getElementById("buscador"); const filtroSemestre = document.getElementById("filtro-semestre");
+
+function renderMaterias() { contenedor.innerHTML = ""; const texto = buscador.value.toLowerCase(); const filtro = filtroSemestre.value;
+
+materias.forEach(m => { if ((m.nombre.toLowerCase().includes(texto) || m.codigo.toLowerCase().includes(texto)) && (!filtro || m.semestre === filtro)) {
+
+const div = document.createElement("div");
+  div
