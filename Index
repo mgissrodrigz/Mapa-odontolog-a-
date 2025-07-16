@@ -1,16 +1,58 @@
-<!DOCTYPE html><html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malla Curricular de Odontología - UNAH</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Malla Curricular de Odontología - UNAH</h1>  <input type="text" id="buscador" placeholder="Buscar materia...">
-  <select id="filtro-semestre">
-    <option value="">Todos los semestres</option>
-  </select>  <div id="malla"></div>  <div id="detalle">
-    <h2>Detalles de la Materia</h2>
-    <p id="detalle-texto">Haz clic en una materia para ver los requisitos.</p>
-  </div>  <script src="script.js"></script></body>
-</html>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#buscador, #filtro-semestre {
+  padding: 10px;
+  margin: 10px 5px;
+  font-size: 16px;
+}
+
+#malla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.materia {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #e0f7fa;
+  border: 1px solid #00acc1;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: pre-line;
+  position: relative;
+}
+
+.materia:hover {
+  background-color: #b2ebf2;
+}
+
+.materia.completada {
+  text-decoration: line-through;
+  background-color: #c8e6c9;
+  border-color: #388e3c;
+}
+
+#detalle {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+#detalle h2 {
+  margin-top: 0;
+}
